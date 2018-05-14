@@ -5,4 +5,5 @@ This project is based on the [2D water ripple coding challenge](http://thecoding
 
 ### Additional resources
 * [2D Water](https://web.archive.org/web/20160418004149/http://freespace.virgin.net/hugo.elias/graphics/x_water.htm)
+* [Live Example](https://madlemon.github.io/Conv-WaterRipple/)
 
