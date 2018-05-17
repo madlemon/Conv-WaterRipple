@@ -65,6 +65,13 @@ function spawnRipple(x, y) {
 	spawnTens.set(1, y, x, 0);
 }
 
+function rainDrop() {
+	let ypos = Math.round(Math.random() * height);
+	let xpos = Math.round(Math.random() * width);
+
+	spawnRipple(xpos, ypos);
+}
+
 var mouseDown = 0;
 document.body.onmousedown = function(evt) {
 	mouseDown = 1;
@@ -82,6 +89,7 @@ canvas.addEventListener('mousemove', function(evt) {
 		let rect = canvas.getBoundingClientRect();
 		let x = evt.clientX - rect.left;
 		let y = evt.clientY - rect.top;
+
 		spawnRipple(x, y);
 	}
 }, false);
@@ -92,7 +100,9 @@ canvas.addEventListener('mousemove', function(evt) {
  */
 function mainLoop() {
 	if (!stop) {
+
 		computeWater();
+		rainDrop();
 		tf.tidy(() => (draw(buffer2), null));
 		//tf.tidy(() => (tf.toPixels(buffer2, canvas), null));
 		requestAnimationFrame(mainLoop);
